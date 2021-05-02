@@ -1,5 +1,17 @@
 {
   // next*styled-componentsでclassNameがdid not matchになるバグ解消
   "presets": ["next/babel"],
-  "plugins": [["styled-components", { "ssr": true, "displayName": true, "preprocess": false }]]
+  "plugins": [
+    [
+      "babel-plugin-styled-components",
+      {
+        "ssr": true,
+        "minify": true,
+        "transpileTemplateLiterals": true,
+        "pure": true,
+        "displayName": true,
+        "preprocess": false
+      }
+    ]
+  ]
 }
