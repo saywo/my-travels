@@ -1,8 +1,8 @@
 export const getAllPosts = async () => {
-  const url = 'https://my-travels.microcms.io/api/v1/posts'
+  const url = process.env.CMS_API_URL
   const fetchOption = {
     headers: {
-      'X-API-KEY': '07cb783a-58b2-446b-96de-a974a820b869',
+      'X-API-KEY': process.env.CMS_X_API_KEY,
     },
   }
   const res = await fetch(url, fetchOption)
