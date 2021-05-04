@@ -1,4 +1,4 @@
-export const getPost = async (id) => {
+export const getPost = async (id: string | string[]) => {
   const url = `${process.env.CMS_API_URL}/${id}`
   const fetchOption = {
     headers: {
@@ -7,7 +7,6 @@ export const getPost = async (id) => {
   }
   const res = await fetch(url, fetchOption)
   const post = await res.json()
-  console.log(post)
 
   return {
     post,

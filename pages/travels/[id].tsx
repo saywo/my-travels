@@ -1,4 +1,5 @@
 import React from 'react'
+import { GetStaticProps, GetStaticPaths } from 'next'
 import GlobalHead from '../../src/components/layouts/GlobalHead'
 import Image from 'next/image'
 import styled from 'styled-components'
@@ -50,7 +51,7 @@ const TravelsPost: React.VFC<Props> = ({ post }) => {
 }
 export default TravelsPost
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const { postsContents } = await getAllPosts()
 
   const paths = postsContents.map((post) => ({
@@ -61,7 +62,7 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false }
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { post } = await getPost(params.id)
 
   return {

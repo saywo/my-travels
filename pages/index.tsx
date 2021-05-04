@@ -1,4 +1,5 @@
 import React from 'react'
+import { GetStaticProps } from 'next'
 import GlobalHead from '../src/components/layouts/GlobalHead'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -50,7 +51,7 @@ const Home: React.VFC<Props> = ({ posts }) => {
 }
 export default Home
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const { postsContents: posts } = await getAllPosts()
   return {
     props: {
