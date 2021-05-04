@@ -1,5 +1,5 @@
 import React from 'react'
-import Head from 'next/head'
+import GlobalHead from '../src/components/layouts/GlobalHead'
 import styled from 'styled-components'
 import { Inner } from '../src/styles/styles'
 
@@ -7,9 +7,15 @@ import { Inner } from '../src/styles/styles'
 //   children: React.ReactNode
 // }
 
+const headText = {
+  title: 'About',
+  description: 'Aboutページです',
+}
+
 const About: React.VFC = () => {
   return (
     <>
+      <GlobalHead title={headText.title} description={headText.description} />
       <_About>
         <_AboutInner>
           <_AboutContent>

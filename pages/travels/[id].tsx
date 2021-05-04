@@ -1,5 +1,5 @@
 import React from 'react'
-import Head from 'next/head'
+import GlobalHead from '../../src/components/layouts/GlobalHead'
 import Image from 'next/image'
 import styled from 'styled-components'
 import { mediaQuery } from '../../src/styles/const'
@@ -12,11 +12,14 @@ type Props = {
 }
 
 const TravelsPost: React.VFC<Props> = ({ post }) => {
+  const headText = {
+    title: post.title,
+    description: post.title,
+  }
+
   return (
     <>
-      <Head>
-        <title>{post.title}</title>
-      </Head>
+      <GlobalHead title={headText.title} description={headText.description} />
 
       <_Post>
         <_PostInner>
